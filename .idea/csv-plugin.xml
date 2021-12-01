@@ -10,7 +10,42 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Adapter/example_adapter.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Bridge/example_bridge.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Builder/example_builder_method.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Composite/example_composite.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Decorator/example_decorator.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Facade/example_facade.py">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -38,7 +73,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Flyweight/example_flyweight.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Prototype/example_prototype.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Proxy/example_proxy.py">
           <value>
             <Attribute>
               <option name="separator" value="," />

@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Engine(ABC):
     """
-    Абстрактный клас двигателя
+    Абстрактный класс двигателя
     """
     @abstractmethod
     def release_engine(self):
@@ -22,7 +22,7 @@ class ChineEngine(Engine):
 
 class Car(ABC):
     """
-    Абстрактный клас авто
+    Абстрактный класс авто
     """
     @abstractmethod
     def release_car(self, engine: Engine):
@@ -45,37 +45,40 @@ class ChineCar(Car):
 
 class Factory(ABC):
     """
-    Абстрактный клас фабрики
+    Абстрактный класс фабрики
     """
 
     @abstractmethod
-    def create_engine(self) -> Engine:
+    def create_engine(self):
         pass
 
     @abstractmethod
-    def create_car(self) -> Car:
+    def create_car(self):
         pass
 
 
 class JapanFactory(Factory):
 
-    def create_engine(self) -> Engine:
+    def create_engine(self):
         return JapanEngine()
 
-    def create_car(self) -> Car:
+    def create_car(self):
         return JapanCar()
 
 
 class ChineFactory(Factory):
 
-    def create_engine(self) -> Engine:
+    def create_engine(self):
         return ChineEngine()
 
-    def create_car(self) -> Car:
+    def create_car(self):
         return ChineCar()
 
 
 class FactoryProducer:
+    """
+    Класс завода производителя
+    """
 
     def get_factory(self, type_of_factory):
         if type_of_factory == 'Japan':
@@ -91,8 +94,6 @@ if __name__ == '__main__':
     car = customer.create_car()
     car.release_car(engine)
 
-if __name__ == '__main__':
-    print('Hello world')
 
 
 

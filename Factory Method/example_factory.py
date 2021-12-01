@@ -35,7 +35,7 @@ class Factory(ABC):
     """
 
     @abstractmethod
-    def create(self, type_furniture) -> Product:
+    def create(self, type_furniture):
         pass
 
 

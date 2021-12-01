@@ -124,9 +124,6 @@ class BudgetPC(PickerPC):
 
 class Director:
 
-    def __init__(self):
-        self.builder = None
-
     def set_builder(self, builder: PickerPC):
         self.builder = builder
 
