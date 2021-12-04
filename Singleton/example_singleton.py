@@ -1,4 +1,27 @@
-class GardenMetaClass(type):
+class Singleton:
+
+    __instances = None
+
+    def __new__(cls, *args, **kwargs):
+        if cls.__instances is None:
+            cls.__instances = super(Singleton, cls).__new__(cls)
+        return cls.__instances
+
+
+class Test(Singleton):
+    pass
+
+
+if __name__ == '__main__':
+    one = Singleton()
+    two = Singleton()
+    print(one is two)
+
+
+class SingletonMeta(type):
+    """
+    Meta class
+    """
     _instances = {}
 
     def __call__(cls, *args, **kwargs):
@@ -8,11 +31,17 @@ class GardenMetaClass(type):
         return cls._instances[cls]
 
 
-class Garden(metaclass=GardenMetaClass):
-    pass
+class Singleton(metaclass=SingletonMeta):
+    def some_business_logic(self):
+        pass
 
 
-if __name__ == '__main__':
-    garden = Garden()
-    garden2 = Garden()
-    print(garden, garden2)
+if __name__ == "__main__":
+
+    s1 = Singleton()
+    s2 = Singleton()
+
+    if id(s1) == id(s2):
+        print("Singleton works, both variables contain the same instance.")
+    else:
+        print("Singleton failed, variables contain different instances.")
