@@ -3,6 +3,9 @@ import uuid
 
 
 class Dot:
+    """
+    Class dot
+    """
     colors = ['red', 'yellow']
     widths = [10, 15, 20]
     height = [10, 15, 20]
@@ -16,7 +19,7 @@ class Dot:
         return f'{[self.width, self.height, self.color]}'
 
 
-class DotUnique:
+class StatesDots:
 
     def __init__(self, unique_state, flyweight: Dot):
         self.unique_state = unique_state
@@ -52,7 +55,7 @@ class DotMaker:
 
     def maker(self, shared_state, unique_state=uuid.uuid4()):
         flyweight = self.flyweight_factory.get_flyweight(shared_state)
-        context = DotUnique(unique_state=unique_state, flyweight=flyweight)
+        context = StatesDots(unique_state=unique_state, flyweight=flyweight)
         self.context.append(context)
         return context
 

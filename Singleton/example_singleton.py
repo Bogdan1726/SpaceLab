@@ -13,8 +13,8 @@ class Test(Singleton):
 
 
 if __name__ == '__main__':
-    one = Singleton()
-    two = Singleton()
+    one = Test()
+    two = Test()
     print(one is two)
 
 
@@ -32,8 +32,7 @@ class SingletonMeta(type):
 
 
 class Singleton(metaclass=SingletonMeta):
-    def some_business_logic(self):
-        pass
+    pass
 
 
 if __name__ == "__main__":
