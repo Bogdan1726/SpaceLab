@@ -17,3 +17,4 @@ class City:
 
 people = City('Dnipro', 1000)
 print(people)
+print(type(people))

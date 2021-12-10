@@ -3,6 +3,7 @@ from copy import copy, deepcopy
 # immutable
 
 # int
+print('int')
 num_1 = 10
 print(id(num_1))
 num_2 = num_1
@@ -13,6 +14,7 @@ print(num_1)
 print(num_2, '\n')
 
 # str
+print('str')
 str_1 = 'string'
 print(id(str_1))
 str_2 = str_1
@@ -23,6 +25,7 @@ print(str_1)
 print(str_2, '\n')
 
 # tuple
+print('tuple')
 a = (1, 2, 3, 4)
 print(id(a))
 b = a
@@ -35,6 +38,7 @@ print(b, '\n')
 # mutable
 
 # list
+print('list')
 lis = [1, 2, 3]
 print(id(lis))
 lis_2 = lis
@@ -45,6 +49,7 @@ print(lis)
 print(lis_2, '\n')
 
 # solution
+print('solution')
 old_list = ['a', 'b', 'c', 'd']
 print(id(old_list))
 new_list = old_list[:]
@@ -68,6 +73,7 @@ a = [1, 2, 3]
 b = [4, 5, 6]
 c = [a, b]
 
+print('copy')
 cop = copy(c)
 print(c)
 cop[0][2] = 5
@@ -78,6 +84,7 @@ print(c, '\n')
 # deepcopy
 # Глубокая копия создает новый составной объект,
 # а затем рекурсивно вставляет в него копии объектов, найденных в оригинале.
+print('deepcopy')
 deep = deepcopy(c)
 print(deep)
 deep[0][1] = 10
@@ -85,7 +92,7 @@ print(deep)
 print(c, '\n')
 
 # erase
-
+print('erase')
 context = ['4', 1, '5', 'a', 7, 'q']
 print(context)
 context.clear()

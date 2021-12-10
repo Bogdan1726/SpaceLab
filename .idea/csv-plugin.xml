@@ -143,6 +143,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/MagicMethods/__new__.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/MagicMethods/__str__ and __repr__.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/MagicMethods/add mul sub and truediv.py">
           <value>
             <Attribute>
@@ -158,6 +172,13 @@
           </value>
         </entry>
         <entry key="/MagicMethods/str and repr.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Memento/example_memento.py">
           <value>
             <Attribute>
               <option name="separator" value=":" />

@@ -1,54 +1,66 @@
-from abc import ABC, abstractmethod
+from collections.abc import Iterable, Iterator
+import random
 
 
-class Iterator(ABC):
-    """
-    Abstract class Iterator
-    """
-    @abstractmethod
-    def next(self):
-        pass
+class Car:
+    cars_brand = ['Subaru', 'Ford', 'Kia', 'Hyundai', 'Mercedes']
+    color_cars = ['red', 'green', 'blue', 'grey', 'yellow']
 
-    @abstractmethod
-    def has_next(self):
-        pass
+    def __init__(self):
+        self.color = random.choice(self.color_cars)
+        self.brand = random.choice(self.cars_brand)
+        self.price = random.randint(10000, 100000)
 
-
-class ColorCarIterator(Iterator):
-    """
-    Iterator class
-    """
-    def __init__(self, color):
-        self.color = color
-        self.index = 0
-
-    def next(self):
-        color_item = self.color[self.index]
-        self.index += 1
-        return f'Color car: {color_item}'
-
-    def has_next(self):
-        return False if self.index >= len(self.color) else True
+    def __repr__(self):
+        return f'Brand: {self.brand}, color: {self.color}, price: {self.price}$'
 
 
-class CarMagazine:
+class CarIterable(Iterable):
     """
     Class Iterable
     """
     def __init__(self):
-        self.color_cars = ['red', 'green', 'blue', 'green', 'yellow']
+        self.collection = [Car() for _ in range(101)]
 
-    def iterator(self):
-        return ColorCarIterator(self.color_cars)
+    def __iter__(self):
+        return CarIterator(self.collection)
+
+
+class CarIterator(Iterator):
+    """
+    Iterator class
+    """
+    def __init__(self, collection: [CarIterable]):
+        self.collection = collection
+        self.limit = 50000
+        self.index = 0
+
+    def __next__(self):
+        result = ''
+        try:
+            value = self.collection[self.index]
+            self.index += 1
+            if value.price <= self.limit:
+                result = value
+        except IndexError:
+            raise StopIteration()
+        return result
 
 
 if __name__ == '__main__':
-    car_magazine = CarMagazine()
-    iterator = car_magazine.iterator()
-    print(iterator.next())
-    print(iterator.next())
-    print(iterator.next())
-    print(iterator.next())
+    car = Car()
+    magazine = CarIterable()
+    for item in magazine:
+        print(item)
+
+
+
+
+
+
+
+
+
 
 
 

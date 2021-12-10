@@ -5,7 +5,6 @@ class CallArea:
 
 
 area = CallArea()
-print(area(3, 5, 4))
-
+print(f'Method _call__ - {area(3, 5, 4)}')
 
 

@@ -4,6 +4,7 @@ from abc import ABC, abstractmethod
 class Engine(ABC):
     """
     Абстрактный класс двигателя
+
     """
     @abstractmethod
     def release_engine(self):

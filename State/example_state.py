@@ -18,7 +18,7 @@ class ComputerOffState(ComputerStateBase):
 
 class ComputerOnState(ComputerStateBase):
     def get_state(self):
-        return 'Computer Onn'
+        return 'Computer On'
 
 
 class ComputerSleepState(ComputerStateBase):
