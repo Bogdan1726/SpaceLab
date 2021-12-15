@@ -234,6 +234,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/Strategy/example_strategy.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/Template_Method/example_tmplate_method.py">
           <value>
             <Attribute>
@@ -245,6 +252,13 @@
           <value>
             <Attribute>
               <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/Visitor/test.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>

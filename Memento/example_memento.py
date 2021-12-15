@@ -1,6 +1,38 @@
-class Memento:
+from abc import ABC, abstractmethod
+
+
+class StateWindows:
     """
-    Класс хранителя состояний
+    Class state of windows
+    """
+    def __init__(self):
+        self.state = 'Windows 10'
+
+    def set_state(self, state):
+        self.state = state
+
+    def get_state(self):
+        return self.state
+
+    def save_state(self):
+        return Memento(self.state)
+
+    def restore_state(self, memento):
+        self.state = memento.get_state()
+
+
+class IMemento(ABC):
+    """
+    Abstract class memento
+    """
+    @abstractmethod
+    def get_state(self):
+        pass
+
+
+class Memento(IMemento):
+    """
+    Class save memento
     """
     def __init__(self, state):
         self.state = state
@@ -9,47 +41,26 @@ class Memento:
         return self.state
 
 
-class Caretaker(object):
-    """Опекун"""
+class Caretaker:
+    """
+    Опекун
+    """
+    def __init__(self, state_windows: StateWindows):
+        self.memento = None
+        self.state_windows = state_windows
 
-    def __init__(self):
-        self._memento = None
+    def backup(self):
+        self.memento = self.state_windows.save_state()
 
     def get_memento(self):
-        return self._memento
-
-    def set_memento(self, memento):
-        self._memento = memento
+        return self.memento
 
 
-class Originator(object):
-    """Создатель"""
-
-    def __init__(self):
-        self._state = None
-
-    def set_state(self, state):
-        self._state = state
-
-    def get_state(self):
-        return self._state
-
-    def save_state(self):
-        return Memento(self._state)
-
-    def restore_state(self, memento):
-        self._state = memento.get_state()
-
-
-originator = Originator()
-caretaker = Caretaker()
-
-originator.set_state('on')
-print('Originator state:', originator.get_state())
-caretaker.set_memento(originator.save_state())
-
-originator.set_state('off')
-print('Originator change state:', originator.get_state())
-
-originator.restore_state(caretaker.get_memento())
-print('Originator restore state:', originator.get_state())
+windows = StateWindows()
+caretaker = Caretaker(windows)
+caretaker.backup()
+print(windows.get_state())
+windows.set_state('Windows 11')
+print(windows.get_state())
+windows.restore_state(caretaker.get_memento())
+print(windows.get_state())
